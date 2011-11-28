@@ -11,9 +11,7 @@ module Ampersat
       domains[domain] = domains[domain] +1
     end
 
-    # return domains
-    domains.sort_by {|key, value| -value}
-    
+    domains.sort_by {|key, value| -value}    
   end
 
   def self.find_domain(email)
