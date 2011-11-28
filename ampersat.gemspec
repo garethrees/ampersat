@@ -6,10 +6,10 @@ Gem::Specification.new do |s|
   s.name        = "ampersat"
   s.version     = Ampersat::VERSION
   s.authors     = ["Gareth Rees"]
-  s.email       = ["reesG12@cardiff.ac.uk"]
-  s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.email       = ["gareth.h.rees@gmail.com"]
+  s.homepage    = "http://github.com/garethrees/ampersat"
+  s.summary     = "Calculates which email domains your subscribers use"
+  s.description = "Calculates which email domains your subscribers use"
 
   s.rubyforge_project = "ampersat"
 
