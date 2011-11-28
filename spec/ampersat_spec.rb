@@ -5,5 +5,8 @@ require "ampersat"
 
 
 describe Ampersat do
-  
+
+  let(:email) { "test@example.com" }
+  let(:multiple_emails) { "jim@example.com, bob@example.org, james@example.net" }
+
 end
