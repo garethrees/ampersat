@@ -11,15 +11,15 @@ describe Ampersat do
   let(:multiple_emails) { "jim@example.com, tom@example.com, bob@example.org, james@example.net" }
 
   it "should return the sum of each email provider" do
-    expected_result = [["example.com", 2], ["example.org", 1], ["example.net", 1]]
+    expected_result = [["example.com", 3], ["example.org", 2], ["example.net", 1]]
     Ampersat.domains(csv_path).should == expected_result
   end
 
   it "should return the email providers with the most common first" do
-    incorrect_result = [["example.org", 1],["example.com", 2], ["example.net", 1]]
+    incorrect_result = [["example.org", 2],["example.com", 3], ["example.net", 1]]
     Ampersat.domains(csv_path).should_not == incorrect_result
 
-    expected_result = [["example.com", 2], ["example.org", 1], ["example.net", 1]]
+    expected_result = [["example.com", 3], ["example.org", 2], ["example.net", 1]]
     Ampersat.domains(csv_path).should == expected_result
   end
 
