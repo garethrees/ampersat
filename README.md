@@ -1,5 +1,7 @@
 # Calculate Most Common Domains From Email List
 
+[![Build Status](https://secure.travis-ci.org/garethrees/ampersat.png)](http://travis-ci.org/garethrees/ampersat)
+
 It's worth checking what email clients your subscribers are using so that you can make sure your emails look good when they view them.
 
 This gem looks at your subscribers CSV and lists the domains in order of popularity*.
