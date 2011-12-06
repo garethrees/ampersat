@@ -27,4 +27,21 @@ describe Ampersat do
     Ampersat.find_domain(email).should == "example.com"
   end
 
+  it "should identify providers from the domain extension" do
+    email = "test@gmail.com"
+    Ampersat.find_provider(email).should == "GMail"
+    email = "test@googlemail.com"
+    Ampersat.find_provider(email).should == "GMail"
+
+    email = "test@hotmail.com"
+    Ampersat.find_provider(email).should == "Hotmail"
+    email = "test@hotmail.co.uk"
+    Ampersat.find_provider(email).should == "Hotmail"
+    email = "test@live.com"
+    Ampersat.find_provider(email).should == "Hotmail"
+
+    email = "test@example.com"
+    Ampersat.find_provider(email).should == "example.com"
+  end
+
 end

@@ -18,4 +18,18 @@ module Ampersat
     email.split('@').last
   end
 
+  def self.find_provider(email)
+    domain = find_domain(email)
+
+    case domain
+    when "gmail.com", "googlemail.com"
+      "GMail"
+    when "hotmail.com", "hotmail.co.uk", "live.com"
+      "Hotmail"
+    else
+      domain
+    end
+
+  end
+
 end
