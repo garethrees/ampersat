@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ampersat by garethrees</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ampersat</h1>
+<p>Calculates which email domains your subscribers use</p>
+        <p class="view"><a href="https://github.com/garethrees/ampersat">View the Project on GitHub <small>garethrees/ampersat</small></a></p>
+        <ul>
+          <li><a href="https://github.com/garethrees/ampersat/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/garethrees/ampersat/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/garethrees/ampersat">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Calculate Most Common Domains From Email List</h1>
+
+<p><a href="http://travis-ci.org/garethrees/ampersat"><img src="https://secure.travis-ci.org/garethrees/ampersat.png" alt="Build Status"></a></p>
+
+<p>It's worth checking what email clients your subscribers are using so that you can make sure your emails look good when they view them.</p>
+
+<p>This gem looks at your subscribers CSV and lists the domains in order of popularity*.</p>
+
+<ul>
+<li>This obviously doesn't take desktop mail clients in to account, but it should give you an idea of what people are using.</li>
+</ul><h2>How to Use</h2>
+
+<h3>Install</h3>
+
+<pre><code>    gem install ampersat
+</code></pre>
+
+<h3>In irb</h3>
+
+<pre><code>    $ irb
+    &gt; require 'ampersat'
+        =&gt; true
+    &gt; Ampersat.domains("/path/to/csv")
+    =&gt; [["example.com", 2], ["example.org", 1], ["example.net", 1]]
+</code></pre>
+
+<h3>In Your App</h3>
+
+<pre><code>    domains = Ampersat.domains("/Users/gareth/test.csv")
+
+    domains.each do |domain, count|
+        puts "#{domain}: #{count}"
+    end
+
+    # example.com: 2
+    # example.org: 1
+    # example.net: 1
+</code></pre>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/garethrees">garethrees</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
