@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+Signal.trap('INT') do
+  puts "\nSIGINT recieved.. terminated."
+  exit 1
+end
+
+require 'ampersat/cli'
+Ampersat::CLI.start

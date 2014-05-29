@@ -12,24 +12,37 @@ This gem looks at your subscribers CSV and lists the domains in order of popular
 
 ### Install
 
-		gem install ampersat
+`gem install ampersat`
+
+### As CLI
+
+```shell
+$ ampersat domains --file=~/test.csv
+example.com: 2
+example.org: 1
+example.net: 1
+```
 
 ### In irb
 
-		$ irb
-		> require 'ampersat'
-		    => true
-		> Ampersat.domains("/path/to/csv")
-		=> [["example.com", 2], ["example.org", 1], ["example.net", 1]]
+```ruby
+$ irb
+> require 'ampersat'
+    => true
+> Ampersat.domains('/path/to/csv')
+=> [['example.com', 2], ['example.org', 1], ['example.net', 1]]
+```
 
 ### In Your App
 
-		domains = Ampersat.domains("/Users/gareth/test.csv")
+```ruby
+domains = Ampersat.domains('/Users/gareth/test.csv')
 
-		domains.each do |domain, count|
-			puts "#{domain}: #{count}"
-		end
+domains.each do |domain, count|
+  puts "#{domain}: #{count}"
+end
 
-		# example.com: 2
-		# example.org: 1
-		# example.net: 1
+# example.com: 2
+# example.org: 1
+# example.net: 1
+```
