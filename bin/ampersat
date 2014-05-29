@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+require 'pathname'
+bin_file = Pathname.new(__FILE__).realpath
+$:.unshift File.expand_path('../../lib', bin_file)
+
+Signal.trap('INT') do
+  puts "\nSIGINT recieved.. terminated."
+  exit 1
+end
+
+require 'ampersat/cli'
+Ampersat::CLI.start
