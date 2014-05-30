@@ -19,16 +19,20 @@ module Ampersat
   end
 
   def self.mxs(email_list, offset=0)
-    mxs = Hash.new(0)
+    mxs = {}
     domains = Ampersat.domains(email_list, offset)
     progressbar = ProgressBar.create(format: '%t: %c / %C |%B|', starting_at: 0, total: domains.length)
     domains.pmap(100) do |domain, qty|
       mx = Ampersat.find_mx(domain)
-      mxs[mx] = mxs[mx] + qty
+      mxs[mx] ||= {}
+      mxs[mx]['domains'] ||= []
+      mxs[mx]['domains'] << domain
+      mxs[mx]['addresses'] ||= 0
+      mxs[mx]['addresses'] = mxs[mx]['addresses'] + qty
       progressbar.increment
     end
 
-    mxs.sort_by {|key, value| - value}
+    mxs.sort_by {|key, value| - value['addresses'] }
   end
 
   def self.find_domain(email)

@@ -21,8 +21,8 @@ module Ampersat
     method_option :file, required: true, type: :string
     def mx
       mxs = Ampersat.mxs(File.expand_path(options[:file]), options[:offset])
-      mxs.each do |mx, count|
-        puts "#{mx}: #{count}"
+      mxs.each do |mx, value|
+        puts "#{mx} - #{value['addresses']}: #{value['domains'].join(', ')}"
       end
     end
 

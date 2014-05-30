@@ -5,8 +5,8 @@ require 'ampersat/version'
 Gem::Specification.new do |s|
   s.name        = 'ampersat'
   s.version     = Ampersat::VERSION
-  s.authors     = ['Gareth Rees']
-  s.email       = ['gareth.h.rees@gmail.com']
+  s.authors     = ['Gareth Rees', 'Robert Coleman']
+  s.email       = ['gareth.h.rees@gmail.com', 'github@robert.net.nz']
   s.homepage    = 'http://github.com/garethrees/ampersat'
   s.summary     = 'Calculates which email domains your subscribers use'
   s.description = 'Calculates which email domains your subscribers use'
