@@ -26,23 +26,23 @@ describe Ampersat do
     Ampersat.find_domain(email).should == 'example.com'
   end
 
-  describe 'offset' do
-    let(:csv_path) { File.expand_path(File.dirname(__FILE__) + '/support/offset.csv') }
+  describe 'column' do
+    let(:csv_path) { File.expand_path(File.dirname(__FILE__) + '/support/multiple-columns.csv') }
     let(:email) { 'test@example.com' }
     let(:multiple_emails) { 'jim@example.com, tom@example.com, bob@example.org, james@example.net' }
-    let(:offset) { 1 }
+    let(:column) { 1 }
 
     it 'should return the sum of each email provider' do
       expected_result = [['example.com', 3], ['example.org', 2], ['example.net', 1]]
-      Ampersat.domains(csv_path, offset).should == expected_result
+      Ampersat.domains(csv_path, column).should == expected_result
     end
 
     it 'should return the email providers with the most common first' do
       incorrect_result = [['example.org', 2],['example.com', 3], ['example.net', 1]]
-      Ampersat.domains(csv_path, offset).should_not == incorrect_result
+      Ampersat.domains(csv_path, column).should_not == incorrect_result
 
       expected_result = [['example.com', 3], ['example.org', 2], ['example.net', 1]]
-      Ampersat.domains(csv_path, offset).should == expected_result
+      Ampersat.domains(csv_path, column).should == expected_result
     end
   end
 

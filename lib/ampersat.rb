@@ -6,20 +6,20 @@ require 'celluloid/pmap'
 
 module Ampersat
 
-  def self.domains(email_list, offset=0)
+  def self.domains(email_list, column=0)
     domains = Hash.new(0)
 
     CSV.foreach(email_list) do |row|
-      domain = Ampersat.find_domain(row[offset])
+      domain = Ampersat.find_domain(row[column])
       domains[domain] = domains[domain] + 1
     end
 
     domains.sort_by {|key, value| - value}
   end
 
-  def self.mxs(email_list, offset=0)
+  def self.mxs(email_list, column=0)
     mxs = {}
-    domains = Ampersat.domains(email_list, offset)
+    domains = Ampersat.domains(email_list, column)
     progressbar = ProgressBar.create(format: '%t: %c / %C |%B|', starting_at: 0, total: domains.length)
     domains.pmap(100) do |domain, qty|
       mx = Ampersat.find_mx(domain)
