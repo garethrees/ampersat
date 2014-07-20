@@ -1,5 +1,4 @@
-require "ampersat/version"
-require "csv"
+require 'csv'
 
 module Ampersat
 
