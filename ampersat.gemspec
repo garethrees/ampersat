@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://github.com/garethrees/ampersat'
   s.summary     = 'Calculates which email domains your subscribers use'
   s.description = 'Calculates which email domains your subscribers use'
+  s.license     = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
