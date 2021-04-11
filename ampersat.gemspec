@@ -10,7 +10,6 @@ Gem::Specification.new do |s|
   s.email       = ['gareth.h.rees@gmail.com', 'github@robert.net.nz']
   s.homepage    = 'http://github.com/garethrees/ampersat'
   s.summary     = 'Calculates which email domains your subscribers use'
-  s.description = 'Calculates which email domains your subscribers use'
   s.license     = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
