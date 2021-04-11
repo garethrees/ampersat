@@ -11,19 +11,19 @@ describe Ampersat do
 
   it 'should return the sum of each email provider' do
     expected_result = [['example.com', 3], ['example.org', 2], ['example.net', 1]]
-    Ampersat.domains(csv_path).should == expected_result
+    expect(Ampersat.domains(csv_path)).to eq(expected_result)
   end
 
   it 'should return the email providers with the most common first' do
     incorrect_result = [['example.org', 2],['example.com', 3], ['example.net', 1]]
-    Ampersat.domains(csv_path).should_not == incorrect_result
+    expect(Ampersat.domains(csv_path)).not_to eq(incorrect_result)
 
     expected_result = [['example.com', 3], ['example.org', 2], ['example.net', 1]]
-    Ampersat.domains(csv_path).should == expected_result
+    expect(Ampersat.domains(csv_path)).to eq(expected_result)
   end
 
   it 'should find the domain of an email address' do
-    Ampersat.find_domain(email).should == 'example.com'
+    expect(Ampersat.find_domain(email)).to eq('example.com')
   end
 
   describe 'column' do
@@ -34,15 +34,15 @@ describe Ampersat do
 
     it 'should return the sum of each email provider' do
       expected_result = [['example.com', 3], ['example.org', 2], ['example.net', 1]]
-      Ampersat.domains(csv_path, column).should == expected_result
+      expect(Ampersat.domains(csv_path, column)).to eq(expected_result)
     end
 
     it 'should return the email providers with the most common first' do
       incorrect_result = [['example.org', 2],['example.com', 3], ['example.net', 1]]
-      Ampersat.domains(csv_path, column).should_not == incorrect_result
+      expect(Ampersat.domains(csv_path, column)).not_to eq(incorrect_result)
 
       expected_result = [['example.com', 3], ['example.org', 2], ['example.net', 1]]
-      Ampersat.domains(csv_path, column).should == expected_result
+      expect(Ampersat.domains(csv_path, column)).to eq(expected_result)
     end
   end
 

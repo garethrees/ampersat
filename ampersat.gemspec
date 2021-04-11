@@ -12,18 +12,16 @@ Gem::Specification.new do |s|
   s.summary     = 'Calculates which email domains your subscribers use'
   s.description = 'Calculates which email domains your subscribers use'
 
-  s.rubyforge_project = "ampersat"
-
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
   s.add_development_dependency 'rake'
-  s.add_development_dependency 'rspec', '~> 2.7'
-  s.add_dependency 'thor', '~> 0.19.1'
-  s.add_dependency 'public_suffix', '~> 1.4.4'
-  s.add_dependency 'ruby-progressbar', '~> 1.5.1'
-  s.add_dependency 'celluloid', '0.15.2'
-  s.add_dependency 'celluloid-pmap', '~> 0.1.0'
+  s.add_development_dependency 'rspec', '~> 3.10'
+  s.add_dependency 'thor', '~> 1.1'
+  s.add_dependency 'public_suffix', '~> 4.0'
+  s.add_dependency 'ruby-progressbar', '~> 1.11'
+  s.add_dependency 'celluloid', '0.18'
+  s.add_dependency 'celluloid-pmap', '~> 1.0'
 end
